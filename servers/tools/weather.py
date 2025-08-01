@@ -6,10 +6,9 @@ It generates fictional but plausible weather data for a given location.
 
 import json
 import random
-from typing import Dict, Any
-from servers.tools import mcp
+from servers import mcp
 
-@mcp.resource("weather://{location}")
+@mcp.tool()
 def get_weather_forecast(location: str) -> str:
     """
     Generates a simulated weather forecast for a specific location.

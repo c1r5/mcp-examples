@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "task-manager-server": {
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "mcp-example-stdio-server:latest"
+      ]
+    }
+  },
+  "inputs": []
+}

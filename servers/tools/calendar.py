@@ -8,10 +8,10 @@ import pytz
 from datetime import datetime, timedelta
 from typing import Optional
 from dateutil import parser
-from servers.tools import mcp
+from servers import mcp
 
 
-@mcp.resource("datetime://{timezone_str}")
+@mcp.tool()
 def get_current_datetime(timezone_str: str = "UTC") -> str:
     """
     Gets the current date and time for a given timezone and returns it as a JSON string.
@@ -29,7 +29,7 @@ def get_current_datetime(timezone_str: str = "UTC") -> str:
     }
     return json.dumps(output, indent=4)
 
-@mcp.resource("datetime://future/{days}/{date_str}")
+@mcp.tool()
 def get_future_datetime(days: int, date_str: Optional[str] = None) -> str:
     """
     Calculates a future date and returns it as a JSON string.
@@ -48,7 +48,7 @@ def get_future_datetime(days: int, date_str: Optional[str] = None) -> str:
     }
     return json.dumps(output, indent=4)
 
-@mcp.resource("datetime://past/{days}/{date_str}")
+@mcp.tool()
 def get_past_datetime(days: int, date_str: Optional[str] = None) -> str:
     """
     Calculates a past date and returns it as a JSON string.

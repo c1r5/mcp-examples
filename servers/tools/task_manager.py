@@ -7,7 +7,7 @@ Tasks are stored in memory and will be lost on server restart.
 import json
 import uuid
 from typing import Dict, Any, Optional
-from servers.tools import mcp
+from servers import mcp
 # In-memory storage for scheduled tasks
 _scheduled_tasks: Dict[str, Dict[str, Any]] = {}
 
